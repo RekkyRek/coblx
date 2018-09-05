@@ -1,20 +1,45 @@
-export const plus = (amount) => {
-    return {
-        type: 'PLUS',
-        amount
-    };
+export const newCard = (card) => {
+  return {
+    type: 'CARD',
+    action: 'NEW',
+    card: {
+      title: 'Hello, Coblx!',
+      code: 'log("Hello, Coblx!")'
+    }
+  }
 }
 
-export const minus = (amount) => {
-    return {
-        type: 'MINUS',
-        amount
-    };
+export const updateTitle = (index, title) => {
+  return {
+    type: 'CARD',
+    action: 'EDIT_TITLE',
+    index,
+    title
+  }
 }
 
-export const set = (amount) => {
-    return {
-        type: 'SET',
-        amount
-    };
+export const updateCode = (index, code) => {
+  return {
+    type: 'CARD',
+    action: 'EDIT_CODE',
+    index,
+    code
+  }
+}
+
+export const updateArguments = (index, args) => {
+  return {
+    type: 'CARD',
+    action: 'EDIT_ARGS',
+    index,
+    args
+  }
+}
+
+export const removeCard = (index) => {
+  return {
+    type: 'CARD',
+    action: 'REMOVE',
+    index
+  }
 }

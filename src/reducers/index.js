@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux'
-import numbers from './numbers'
+import cards from './cards'
 
-const numbersApp = combineReducers({
-  numbers
-})
+let cardsApp
 
-export default numbersApp
+try {
+  cardsApp = combineReducers({
+    cards
+  })
+} catch (e) {
+
+}
+
+export default cardsApp

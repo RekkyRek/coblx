@@ -1,0 +1,179 @@
+body
+    margin: 0px
+    font-family: sans-serif
+.cards
+    display: flex
+    justify-content: center
+    align-content: center
+    flex-wrap: wrap
+    height: 100vh
+    width: 100vw
+    background: #d5d7de
+    overflow-y: scroll
+
+.cardsContainer
+    display: flex
+    max-width: calc(100% - 8px)
+    width: 100vw
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-items: flex-start
+    align-content: flex-start
+
+.card
+    background: #ffffff
+    padding: 24px
+    margin: 12px
+    width: 350px
+    height: 350px
+    box-shadow: 2px 2px 16px rgba(0,0,0,0.02), 2px 2px 6px rgba(0,0,0,0.07)
+    border-radius: 8px
+    display: flex
+    flex-direction: column
+    position: relative
+    overflow: hidden
+    transition: width 0.3s, padding 0.3s, margin 0.3s, box-shadow 0.1s, transform 0.1s
+    .cardHeader
+        background: #e8ecf1
+        width: 350px
+        height: 50px
+        border-radius: 8px
+        display: flex
+        align-items: center
+        p
+            margin-left: 12px
+            font-size: 13px
+            flex: 1
+            text-overflow: ellipsis
+            max-width: 300px
+            margin-right: 8px
+            overflow: hidden
+            white-space: nowrap
+            &:focus
+                outline: none
+        button
+            background: #d7dce2
+            height: 26px
+            width: 26px
+            margin-right: 12px
+            border-radius: 100%
+            cursor: pointer
+            border: none
+            transition: background 0.2s
+            &:hover
+                background: #b7bcd2
+            &:focus
+                outline: none
+    .cardConsoleOpen
+        .ace_editor
+            .ace_scrollbar
+                overflow-x: hidden !important
+                overflow-y: hidden !important
+    .cardEditor
+        flex: 1
+        margin-top: 8px
+        position: relative
+        .ace_editor
+            border-radius: 8px
+            width: 350px !important
+            height: 100% !important
+        .cardConsole
+            position: absolute
+            top: 0px
+            left: 0px
+            height: calc(100% - 24px)
+            width: 100%
+            padding-top: 12px
+            padding-bottom: 12px
+            overflow-y: scroll
+            z-index: 5
+            border-radius: 8px
+            background: #f6f7f9
+            .cardConsoleEntry, .cardConsoleEntryJSON
+                font-size: 13px
+                margin: 4px 12px 4px 12px
+            .cardConsoleEntry
+                b
+                    opacity: 0.33
+        .cardConsoleClose
+            background: #d7dce2
+            height: 26px
+            width: 26px
+            margin-right: 12px
+            border-radius: 100%
+            cursor: pointer
+            border: none
+            position: absolute
+            right: 8px
+            top: 8px
+            z-index: 10
+            transition: background 0.2s
+            &:hover
+                background: #b7bcd2
+            &:focus
+                outline: none
+    .cardExec
+        display: flex
+        margin-top: 8px
+        background: #e8ecf1
+        border-radius: 8px
+        height: 50px
+        align-items: center
+        [contenteditable=true]:empty:before
+            content: 'msg: "Hello World", num: 7'
+            display: block
+            opacity: 0.7
+            cursor: text
+        [contenteditable=true]:empty:focus:before
+            cursor: text
+            opacity: 0
+        .cardArguments
+            cursor: text
+            font-size: 13px
+        button, .cardArguments
+            border-radius: 8px
+            padding: 12px
+            border: none
+            flex: 1
+            background: none
+            &:focus
+                outline: none
+        button
+            background: #d7dce2
+            min-height: 26px
+            min-width: 26px
+            margin-right: 12px
+            border-radius: 100%
+            padding: 0px
+            flex: 0
+            line-height: 0
+            cursor: pointer
+            transition: background 0.2s
+            &:hover
+                background: #b7bcd2
+            &:focus
+                outline: none
+    &:hover
+        box-shadow: 2px 4px 24px rgba(0,0,0,0.04), 2px 4px 12px rgba(0,0,0,0.12)
+.tiny
+    width: 49px
+    align-items: center
+    text-align: center
+    p
+        width: 49px
+
+.card-enter, .card-leave.card-leave-active
+    width: 0px !important
+    padding: 24px 0px !important
+    margin: 12px 0px !important
+
+.card-enter.card-enter-active, .card-leave
+    width: 350px !important
+    padding: 24px 24px !important
+    margin: 12px 12px !important
+
+.card-leave.card-leave-active
+    margin: 12px 0px !important
+
+.card-leave.card-leave-active:first-child, .card-leave.card-leave-active:last-child
+    margin: 12px 0px !important
